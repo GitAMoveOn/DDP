@@ -1,0 +1,45 @@
+---
+title: "Seahawks Draft Update!"
+author: "werlindo"
+date: "April 26, 2018"
+output: html_document
+---
+
+## The Seahawks play at CenturyLink Field!
+```{r, echo=FALSE,warning=FALSE}
+library(leaflet)
+hawkIcon <- makeIcon(
+  iconUrl = "https://upload.wikimedia.org/wikipedia/it/0/01/Seattle_Seahawks_Logo_2012.png",
+  iconWidth = 120, iconHeight = 60,
+  iconAnchorX = 60, iconAnchorY = -20
+)
+
+hawkLatLong <- data.frame( lat = c(47.595383)
+                           ,long = c(-122.331586) )
+
+hawkLatLong %>%
+  leaflet %>%
+  addTiles() %>%
+  addMarkers(icon = hawkIcon, popup = "Go Hawks!")
+
+```
+
+## With the 27th pick in the 2018 NFL draft....
+#### The Seattle Seahawks selected Rashaad Penny, a senior from San Diego State University.
+```{r, echo=FALSE,warning=FALSE}
+
+sdsuIcon <- makeIcon(
+  iconUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/San_Diego_State_Aztecs_logo.svg/351px-San_Diego_State_Aztecs_logo.svg.png",
+  iconWidth = 120, iconHeight = 60,
+  iconAnchorX = 10, iconAnchorY = -20
+)
+
+sdsuLatLong <- data.frame( lat = c(32.775828)
+                           ,long = c(-117.071531) )
+
+sdsuLatLong %>%
+  leaflet %>%
+  addTiles() %>%
+  addMarkers(icon = sdsuIcon, popup = "San Diego State University!")
+
+```
