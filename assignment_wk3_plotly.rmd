@@ -38,6 +38,45 @@ yy <- list(
   title = "Win Percentage"
 )
 
+a <- list(
+  x = 2013,
+  y = .813,
+  text = "Won Super Bowl!",
+  xref = "x",
+  yref = "y",
+  showarrow = TRUE,
+  # arrowhead = 7,
+   ax = 20,
+   ay = -40
+  # color = "green"
+)
+
+b <- list(
+  x = 2014,
+  y = hawks$WinPct[hawks$Season==2014],
+  text = "Lost Super Bowl :(",
+  xref = "x",
+  yref = "y",
+  showarrow = TRUE,
+  # arrowhead = 7,
+  ax = 50,
+  ay = -40
+  # color = "green"
+)
+
+c <- list(
+  x = 2005,
+  y = hawks$WinPct[hawks$Season==2005],
+  text = "Lost Super Bowl :(",
+  xref = "x",
+  yref = "y",
+  showarrow = TRUE,
+  # arrowhead = 7,
+  ax = -20,
+  ay = -40
+  # color = "green"
+)
+
 p <- plot_ly(hawks, x = ~hawks$Season, y = ~hawks$WinPct, type = "scatter"
           ,mode = "markers", color = ~hawks$Playoffs.Desc
           ,colors = pal,           # marker=list(size=15)
@@ -45,7 +84,10 @@ p <- plot_ly(hawks, x = ~hawks$Season, y = ~hawks$WinPct, type = "scatter"
                 line = list(color = 'gray',
                             width = 2))) %>%
   layout(title = "Seahawks Win/Loss Pct" ,xaxis = xx, yaxis = yy) %>%
-  layout(yaxis = list(tickformat = "%"))
-p
+  layout(yaxis = list(tickformat = "%")) %>%
+  layout(annotations = a) %>%
+  layout(annotations = b) %>%
+  layout(annotations = c)
+  p
 
 ```
