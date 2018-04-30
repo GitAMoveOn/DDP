@@ -1,0 +1,51 @@
+---
+title: "Seahawks, a History"
+author: "werlindo"
+date: "April 29, 2018"
+output: ioslides_presentation #html_document
+---
+
+## Seattle Seahawks
+#### Winning Percentage since entering NFL.
+```{r, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE,results="hide"}
+library(plotly) #Charts
+
+# Get Data
+hawks <- read.csv("https://raw.githubusercontent.com/GitAMoveOn/DDP/gh-pages/seahawks.csv")
+colnames(hawks)[1] <- 'Season'
+
+# Get Data
+summary(hawks)
+
+# Some cleaning for chart friendliness
+summary(hawks)
+names(hawks)
+
+made <- which(hawks$Playoffs)
+missed <- which(!hawks$Playoffs)
+hawks$Playoffs.Desc <- "blank"
+hawks$Playoffs.Desc[made] <- "Made Playoffs"
+hawks$Playoffs.Desc[missed] <- "Missed Playoffs"
+tail(hawks)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, eval=TRUE}
+# Create Plot
+pal <- c("green","blue")
+
+xx <- list(title = "Season (Year)")
+yy <- list(
+  title = "Win Percentage"
+)
+
+p <- plot_ly(hawks, x = ~hawks$Season, y = ~hawks$WinPct, type = "scatter"
+          ,mode = "markers", color = ~hawks$Playoffs.Desc
+          ,colors = pal,           # marker=list(size=15)
+        marker = list(size = 10,
+                line = list(color = 'gray',
+                            width = 2))) %>%
+  layout(title = "Seahawks Win/Loss Pct" ,xaxis = xx, yaxis = yy) %>%
+  layout(yaxis = list(tickformat = "%"))
+p
+
+```
