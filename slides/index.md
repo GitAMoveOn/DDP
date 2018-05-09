@@ -158,8 +158,11 @@ We built an app that estimates the first four years of [Approximate Value](https
 
 --- .class4 #idDemo
 ## Approximate Value Predictor for Drafted Player
+[link](https://gitamoveon.shinyapps.io/Project_Draft_AV/)
 
 As an example, here are the estimated 4-Year AVs of the Seahawks' 2018 draft class. The total estimated 4-Year AV is 122.7.
+
+Code: [ui.R](https://raw.githubusercontent.com/GitAMoveOn/DDP/gh-pages/app/ui.R) and [server.R](https://raw.githubusercontent.com/GitAMoveOn/DDP/gh-pages/app/server.R)
 
 Go Hawks.
 
