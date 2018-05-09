@@ -116,6 +116,8 @@ May 08, 2018
 
 <small>
 [werlindo](https://www.linkedin.com/in/werlindo/)|[(GitHub)](https://github.com/gitamoveon)  
+
+[RMD for these slides](https://github.com/GitAMoveOn/DDP/blob/gh-pages/slides/index.Rmd)
 </small>
 
 ---  
