@@ -83,7 +83,9 @@ shinyUI(fluidPage(
     sidebarPanel(
       #   span("groups of words", style = "color:blue"),
 
-      p(tags$b("Select values from the drop-downs below:"), br()),
+      p(tags$b("1. Select values from the drop-downs below"), br(),br(),
+        tags$b("2. Click on the "), br(), 
+        tags$b("[Calculate Predicted AV] button"),br(), tags$b("to get results"), br(), br()),
       selectizeInput('dd.rnd','Round', draft$Rnd, selected="" ),
       # verbatimTextOutput('out2'),
       selectInput('dd.pos','Position', draft$Position.Standard, selected=""),
